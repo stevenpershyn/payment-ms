@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: order-ms
+  name: payment-ms
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: order-ms
+      app: payment-ms
   template:
     metadata:
       labels:
-        app: order-ms
+        app: payment-ms
     spec:
       containers:
-      - name: order-ms
-        image: stevenpershyn/orderms:latest
+      - name: payment-ms
+        image: stevenpershyn/paymentms:latest
         ports:
         - containerPort: 8080
